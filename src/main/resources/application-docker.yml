@@ -1,0 +1,19 @@
+# Docker profile: enables Redis + RabbitMQ
+spring:
+  datasource:
+    url: jdbc:h2:mem:matchdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  data:
+    redis:
+      host: redis
+  rabbitmq:
+    host: rabbitmq
+
+app:
+  rabbitmq:
+    enabled: true
+  redis:
+    enabled: true
+
+logging:
+  level:
+    com.qifanfeng: INFO
