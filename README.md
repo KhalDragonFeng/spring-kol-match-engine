@@ -1,5 +1,23 @@
 # Spring Boot KOL Match Engine
 
+[![CI](https://github.com/KhalDragonFeng/spring-kol-match-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/KhalDragonFeng/spring-kol-match-engine/actions/workflows/ci.yml)
+
+## Client Snapshot
+
+This demo is a proof that I can build backend services where ranking quality, API clarity, and operational fallbacks matter.
+
+- Best fit: marketplace matching, recommendation/ranking APIs, campaign matching, influencer discovery, internal scoring tools, or Spring Boot backend rescue work.
+- What it demonstrates: Spring Boot 3, MyBatis Plus, H2/MySQL swapability, Redis cache fallback, RabbitMQ-ready async events, Swagger API docs, and algorithm unit tests.
+- Verification path: install JDK 17, run `mvn test`, then `mvn spring-boot:run` and open `/swagger-ui.html`.
+- Typical client outcome: a backend service that is easy to test locally, explain to stakeholders, and extend into production infrastructure.
+
+## What To Check In 60 Seconds
+
+1. Read the matching API endpoint and sample `curl`.
+2. Open the Swagger UI after running locally.
+3. Review the cosine-similarity test coverage.
+4. Check the CI badge to confirm Java 17 tests pass from a clean checkout.
+
 > High-concurrency KOL (Key Opinion Leader) matchmaking engine with cosine-similarity scoring, Redis caching, RabbitMQ async processing, and Swagger API documentation. Built with **Spring Boot 3**, **MyBatis Plus**, and **H2/MySQL**.
 
 ---
