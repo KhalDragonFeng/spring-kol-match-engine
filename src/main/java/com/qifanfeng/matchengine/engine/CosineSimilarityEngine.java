@@ -79,10 +79,8 @@ public class CosineSimilarityEngine {
 
         // Tag overlap (Jaccard coefficient)
         if (req.getTargetTags() != null && kol.getTags() != null) {
-            Set<String> reqTags = new HashSet<>(Arrays.asList(req.getTargetTags().toLowerCase().split(",")));
-            Set<String> kolTags = new HashSet<>(Arrays.asList(kol.getTags().toLowerCase().split(",")));
-            reqTags.replaceAll(String::trim);
-            kolTags.replaceAll(String::trim);
+            Set<String> reqTags = parseTags(req.getTargetTags());
+            Set<String> kolTags = parseTags(kol.getTags());
 
             Set<String> intersection = new HashSet<>(reqTags);
             intersection.retainAll(kolTags);
@@ -95,6 +93,13 @@ public class CosineSimilarityEngine {
         }
 
         return Math.min(score, 1.0);
+    }
+
+    private Set<String> parseTags(String tags) {
+        return Arrays.stream(tags.toLowerCase().split(","))
+                .map(String::trim)
+                .filter(tag -> !tag.isEmpty())
+                .collect(Collectors.toSet());
     }
 
     /**
